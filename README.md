@@ -5,13 +5,13 @@ Read this document at [github.com](https://github.com/Bhavithiran97/micropython-
 
 ![rero:micro](https://raw.githubusercontent.com/rerokit/pxt-reromicro/master/icon.png)
 
-* Use ``__from reromicro import *__`` at the top of your program
-* Use ``__rero = reromicro()__`` to create instance object
+* Use ``from reromicro import *`` at the top of your program
+* Use ``rero = reromicro()`` to create instance object
 
 ## Let's make some noise!
 
 * rero:micro's built-in piezo buzzer works with the default music module that comes with MicroPython on the BBC micro:bit.
-* Use ``__import music__`` at the top of your program
+* Use ``import music`` at the top of your program
 
 ```python
 # Play melody "POWER_UP"
@@ -20,9 +20,9 @@ music.play(music.POWER_UP)
 
 ## Let's move it, move it~
 
-* Use ``__rero.RunMotor(*leftMotorSpeed*, *rightMotorSpeed*)__`` to navigate rero:micro. Negative speed (-100 to -1) reverses the robot (eg: ``-50``), positive speed (1 to 100) moves it forward (eg: ``80``) and zero speed (``0``) brakes the motor. Note that the direction refers to rero:micro's movement, NOT motor's rotating direction.
+* Use ``rero.RunMotor(*leftMotorSpeed*, *rightMotorSpeed*)`` to navigate rero:micro. Negative speed (-100 to -1) reverses the robot (eg: ``-50``), positive speed (1 to 100) moves it forward (eg: ``80``) and zero speed (``0``) brakes the motor. Note that the direction refers to rero:micro's movement, NOT motor's rotating direction.
 
-* Use ``__rero.Brake()__`` to brake rero:micro.
+* Use ``rero.Brake()`` to brake rero:micro.
 
 ```python
 # rero:micro move forward at speed 50, for 1 second
@@ -39,7 +39,7 @@ rero.Brake()
 
 ## Sensing obstacle
 
-* ``__rero.ReadUltrasonic()__`` returns the distance in centimeter between ultrasonic sensor and any obstacle in front of it.
+* ``rero.ReadUltrasonic()`` returns the distance in centimeter between ultrasonic sensor and any obstacle in front of it.
 
 ```python
 # Forever loop
@@ -58,12 +58,12 @@ while True:
 ## Line tracking
 
 ### ~ hint
-``__rero.ReadLineSensors()__`` function must be called to read all three line sensors first before using ``__rero.LineSensorDetectsLine(rero.(x))__`` and/or ``__rero.LineIrIntensity(rero.(x))__`` to get the result.
+``rero.ReadLineSensors()`` function must be called to read all three line sensors first before using ``__rero.LineSensorDetectsLine(rero.(x))__`` and/or ``rero.LineIrIntensity(rero.(x))`` to get the result.
 ### ~
 
-* Use ``__rero.LineSensorDetectsLine(rero.(x))__`` to get the boolean value of line detection. Returns ``true`` when line is detected, otherwise ``false``.
+* Use ``rero.LineSensorDetectsLine(rero.(x))`` to get the boolean value of line detection. Returns ``true`` when line is detected, otherwise ``false``.
 
-* Use ``__rero.LineIrIntensity(rero.(x))__`` to get the reflected infrared (IR) intensity value, ranging from ``0`` to ``1500``.
+* Use ``rero.LineIrIntensity(rero.(x))`` to get the reflected infrared (IR) intensity value, ranging from ``0`` to ``1500``.
 
 ```python
 # Forever loop
