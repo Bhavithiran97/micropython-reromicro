@@ -1,6 +1,7 @@
 from microbit import *
 from machine import time_pulse_us
 from utime import ticks_us, sleep_us, sleep_ms
+import neopixel
 
 class reromicro():
 
@@ -100,53 +101,17 @@ class reromicro():
         self.lineSensorThreshold[1] = centerThreshold
         self.lineSensorThreshold[2] = rightThreshold
 
-    def brake(self):
+    def Brake(self):
         pin12.write_digital(0)
         pin8.write_analog(512)
         pin16.write_analog(512)
 
-    def MoveForward(self, speed):
-        speed = max(0, min(speed, 100))
-        speed = 511 + speed * 512 / 100
-        pin8.write_analog(speed)
-        pin16.write_analog(speed)
-        pin12.write_digital(1)
+    def RunMotor(self, nLeftSpeed, nRightSpeed):
+        nLeftSpeed = (100 + nLeftSpeed) * 1024 / 200
+        nLeftSpeed = max(0, min(nLeftSpeed, 1023))
+        nRightSpeed = (100 + nRightSpeed) * 1024 / 200
+        nRightSpeed = max(0, min(nRightSpeed, 1023))
 
-    def MoveBackward(self, speed):
-        speed = max(0, min(speed, 100))
-        speed = 512 - speed * 512 / 100
-        pin8.write_analog(speed)
-        pin16.write_analog(speed)
-        pin12.write_digital(1)
-
-    def TurnLeft(self, speed):
-        speed = max(0, min(speed, 100))
-        nLeftSpeed = 512 - speed * 512 / 100
-        nRightSpeed = 511 + speed * 512 / 100
         pin8.write_analog(nLeftSpeed)
         pin16.write_analog(nRightSpeed)
         pin12.write_digital(1)
-
-    def TurnRight(self, speed):
-        speed = max(0, min(speed, 100))
-        nLeftSpeed = 511 + speed * 512 / 100
-        nRightSpeed = 512 - speed * 512 / 100
-        pin8.write_analog(nLeftSpeed)
-        pin16.write_analog(nRightSpeed)
-        pin12.write_digital(1)
-
-    def RunMotor(self, motor, speed):
-        speed = (100 + speed) * 1024 / 200
-        speed = max(0, min(speed, 1023))
-        if (motor == self.left):
-            pin8.write_analog(speed)
-            pin16.write_analog(512)
-            pin12.write_digital(1)
-        elif (motor == self.right):
-            pin8.write_analog(512)
-            pin16.write_analog(speed)
-            pin12.write_digital(1)
-        elif (motor == self.both):
-            pin8.write_analog(speed)
-            pin16.write_analog(speed)
-            pin12.write_digital(1)
