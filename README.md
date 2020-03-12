@@ -2,7 +2,6 @@
 
 This MicroPython package/extension/library provides driver for [**rero:micro** educational robot](https://my.cytron.io/p-rero-micro?currency=usd).<br />
 
-
 * Use ``from reromicro import *`` at the top of your program
 * Use ``rero = reromicro()`` to create instance object
 
@@ -88,6 +87,7 @@ while True:
 ## Colour Splash!
 
 * This robot also has 7x NeoPixels (WS2812B programmable RGB LEDs) built-in.
+* Use ``import neopixel`` at the top of your program
 
 ### ~ hint
 See [bbcmicrobit/micropython-neopixel](https://microbit-micropython.readthedocs.io/en/latest/neopixel.html#module-neopixel) for NeoPixels support.
