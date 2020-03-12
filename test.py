@@ -11,7 +11,7 @@ sleep_ms(1000)
 def ultrasonicPushPull():
     distance = rero.ReadUltrasonic()
     if distance > 35:
-        rero.brake()
+        rero.Brake()
     elif distance > 15:
         speed = ((distance - 15) * 5)
         rero.RunMotor(speed, speed)
@@ -21,7 +21,7 @@ def ultrasonicPushPull():
 
 def lineFollow():
     if rero.ReadUltrasonic() < 10:
-        rero.brake()
+        rero.Brake()
     else:
         rero.ReadLineSensors()
         if rero.LineSensorDetectsLine(rero.leftSensor) and rero.LineSensorDetectsLine(rero.centerSensor):
@@ -35,20 +35,20 @@ def lineFollow():
         elif rero.LineSensorDetectsLine(rero.rightSensor):
             rero.RunMotor(30, 10)
         else:
-            rero.brake()
+            rero.Brake()
 
 while True:
     if button_a.was_pressed():
         Mode = 1
-        rero.brake()
+        rero.Brake()
 
     elif button_b.was_pressed():
         Mode = 2
-        rero.brake()
+        rero.Brake()
 
     elif  button_a.is_pressed() and button_b.is_pressed():
         Mode = 3
-        rero.brake()
+        rero.Brake()
 
     if Mode == 1:
         ultrasonicPushPull()
