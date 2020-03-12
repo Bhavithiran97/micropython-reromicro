@@ -25,7 +25,7 @@ def lineFollow():
     else:
         rero.ReadLineSensors()
         if rero.LineSensorDetectsLine(rero.leftSensor) and rero.LineSensorDetectsLine(rero.centerSensor):
-            rero.RunMotor(25, 40)
+            rero.RunMotor(25, 40)  # left motor speed = 25 , Right motor speed = 40
         elif rero.LineSensorDetectsLine(rero.rightSensor) and rero.LineSensorDetectsLine(rero.centerSensor):
             rero.RunMotor(40, 25)
         elif rero.LineSensorDetectsLine(rero.centerSensor):
