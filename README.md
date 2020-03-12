@@ -1,6 +1,6 @@
 # rero:micro Extension for MicroPython
 
-This MicroPython package/extension/library provides driver for [**rero:micro** educational robot](https://www.cytron.io/micro:bit/p-reromicro?currency=usd).<br />
+This MicroPython package/extension/library provides driver for [**rero:micro** educational robot](https://my.cytron.io/p-rero-micro?currency=usd).<br />
 
 
 * Use ``from reromicro import *`` at the top of your program
