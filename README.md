@@ -1,9 +1,7 @@
 # rero:micro Extension for MicroPython
 
 This MicroPython package/extension/library provides driver for [**rero:micro** educational robot](https://www.cytron.io/micro:bit/p-reromicro?currency=usd).<br />
-Read this document at [github.com](https://github.com/Bhavithiran97/micropython-reromicro).
 
-![rero:micro](https://raw.githubusercontent.com/rerokit/pxt-reromicro/master/icon.png)
 
 * Use ``from reromicro import *`` at the top of your program
 * Use ``rero = reromicro()`` to create instance object
@@ -58,7 +56,7 @@ while True:
 ## Line tracking
 
 ### ~ hint
-``rero.ReadLineSensors()`` function must be called to read all three line sensors first before using ``__rero.LineSensorDetectsLine(rero.(x))__`` and/or ``rero.LineIrIntensity(rero.(x))`` to get the result.
+``rero.ReadLineSensors()`` function must be called to read all three line sensors first before using ``rero.LineSensorDetectsLine(rero.(x))`` and/or ``rero.LineIrIntensity(rero.(x))`` to get the result.
 ### ~
 
 * Use ``rero.LineSensorDetectsLine(rero.(x))`` to get the boolean value of line detection. Returns ``true`` when line is detected, otherwise ``false``.
