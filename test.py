@@ -1,4 +1,5 @@
 from reromicro import *
+import neopixel
 import music
 
 rero = reromicro()
