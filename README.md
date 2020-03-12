@@ -20,7 +20,7 @@ music.play(music.POWER_UP)
 
 ## Let's move it, move it~
 
-* Use ``rero.RunMotor(*leftMotorSpeed*, *rightMotorSpeed*)`` to navigate rero:micro. Negative speed (-100 to -1) reverses the robot (eg: ``-50``), positive speed (1 to 100) moves it forward (eg: ``80``) and zero speed (``0``) brakes the motor. Note that the direction refers to rero:micro's movement, NOT motor's rotating direction.
+* Use ``rero.RunMotor(leftMotorSpeed, rightMotorSpeed)`` to navigate rero:micro. Negative speed (-100 to -1) reverses the robot (eg: ``-50``), positive speed (1 to 100) moves it forward (eg: ``80``) and zero speed (``0``) brakes the motor. Note that the direction refers to rero:micro's movement, NOT motor's rotating direction.
 
 * Use ``rero.Brake()`` to brake rero:micro.
 
