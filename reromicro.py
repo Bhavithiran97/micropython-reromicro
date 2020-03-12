@@ -1,7 +1,6 @@
 from microbit import *
 from machine import time_pulse_us
 from utime import ticks_us, sleep_us, sleep_ms
-import neopixel
 
 class reromicro():
 
