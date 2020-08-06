@@ -1,6 +1,6 @@
 # rero:micro Extension for MicroPython
 
-This MicroPython package/extension/library provides driver for [**rero:micro** educational robot](https://my.cytron.io/p-rero-micro?currency=usd).<br />
+This MicroPython package/extension/library provides driver for [**rero:micro** educational robot](https://www.cytron.io/p-rero-micro-coding-robot-incl.-micro-bit?tracking=b-py).<br />
 
 * Use ``from reromicro import *`` at the top of your program
 * Use ``rero = reromicro()`` to create instance object
