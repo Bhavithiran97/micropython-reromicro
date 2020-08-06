@@ -42,12 +42,15 @@ class reromicro():
                 self.lineSensorThreshold[i] = ((self.lineSensorMax[i] + self.lineSensorMin[i]) >> 1) - ((self.lineSensorMax[i] - self.lineSensorMin[i]) >> 2)
 
     def EE_Read32bit(self,addr):
-        buf = bytearray(1)
-        buf[0] = addr
-        i2c.write(self.AT24_I2C_ADDR,buf)
-        data = i2c.read(self.AT24_I2C_ADDR,4)
-        data = int.from_bytes(data, "big") # convert bytes to int with big endian
-        return data
+        try:
+            buf = bytearray(1)
+            buf[0] = addr
+            i2c.write(self.AT24_I2C_ADDR,buf)
+            data = i2c.read(self.AT24_I2C_ADDR,4)
+            data = int.from_bytes(data, "big") # convert bytes to int with big endian
+            return data
+        except OSError:
+            pass
 
     def ReadUltrasonic(self):
         self.trig.set_pull(self.trig.NO_PULL)
