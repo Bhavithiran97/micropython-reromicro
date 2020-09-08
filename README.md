@@ -5,6 +5,8 @@ This MicroPython package/extension/library provides driver for [**rero:micro** e
 * Use ``from reromicro import *`` at the top of your program
 * Use ``rero = reromicro()`` to create instance object
 
+[Here is a detailed tutorial to program rero:micro using MicroPython](https://www.hackster.io/bhavithiran97/program-micro-bit-mobile-robot-with-python-1-colour-splash-d8c823)
+
 ## Let's make some noise!
 
 * rero:micro's built-in piezo buzzer works with the default music module that comes with MicroPython on the BBC micro:bit.
